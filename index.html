@@ -1,1 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>UKRP Staff Handbook</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --yellow:#facc15;
+  --green:#22c55e;
+  --dark:#0a0f1c;
+  --panel:#121a2e;
+  --text:#e5e7eb;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Segoe UI,Arial,sans-serif;
+  background:var(--dark);
+  color:var(--text);
+}
+
+/* POPUP */
+#popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+.popup-box{
+  background:var(--panel);
+  border:2px solid var(--yellow);
+  padding:32px;
+  border-radius:18px;
+  max-width:460px;
+  text-align:center;
+}
+.popup-box img{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  border:3px solid var(--green);
+}
+.popup-box h2{color:var(--yellow)}
+.popup-box .role{color:var(--green);font-weight:bold}
+.popup-box .discord{color:#ef4444;font-weight:bold}
+.popup-box button{
+  margin-top:22px;
+  padding:12px 30px;
+  background:var(--green);
+  border:none;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* SIDEBAR */
+.sidebar{
+  position:fixed;
+  left:0;top:0;
+  width:260px;
+  height:100%;
+  background:#0e1530;
+  border-right:3px solid var(--yellow);
+  padding:20px;
+}
+.sidebar img{
+  width:140px;
+  display:block;
+  margin:0 auto 10px;
+}
+.sidebar h2{
+  text-align:center;
+  color:var(--yellow);
+}
+.sidebar button{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  background:#141e42;
+  border:none;
+  border-radius:10px;
+  color:var(--text);
+  font-size:15px;
+  cursor:pointer;
+}
+.sidebar button:hover,
+.sidebar button.active{
+  background:#1f2f6b;
+}
+
+/* CONTENT */
+.content{
+  margin-left:280px;
+  padding:40px;
+}
+.page{
+  display:none;
+}
+.page.active{
+  display:block;
+}
+.panel{
+  background:var(--panel);
+  padding:26px;
+  border-radius:18px;
+  border:1px solid #24306a;
+}
+
+footer{
+  margin-top:80px;
+  text-align:center;
+  opacity:.7;
+}
+</style>
+</head>
+
+<body>
+
+<!-- POPUP -->
+<div id="popup">
+  <div class="popup-box">
+    <img src="https://i.postimg.cc/FR3GGDpj/duckie.png">
+    <h2>! NexX</h2>
+    <p class="role">Owner & Developer</p>
+    <p>Welcome to the official <strong>UKRP Staff Handbook</strong>.</p>
+    <p>Issues, bugs, or development problems: Discord:</p>
+    <p class="discord">limited_nexxxx</p>
+    <button onclick="closePopup()">Enter Handbook</button>
+  </div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <img src="https://cdn.discordapp.com/attachments/1430536118394421433/1472612097098514536/IMG_6139.png?ex=69933463&is=6991e2e3&hm=0348b766bc9d19bf6980ac08dcd1fe0891087f2fa78aac19de98c85365ec6db9&">
+  <h2>UKRP STAFF</h2>
+
+  <button class="active" onclick="showPage('home',this)">Home</button>
+  <button onclick="showPage('punishments',this)">Punishments</button>
+  <button onclick="showPage('chain',this)">Chain of Command</button>
+  <button onclick="showPage('expectations',this)">Expectations</button>
+  <button onclick="showPage('authority',this)">Authority</button>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+<div id="home" class="page active">
+  <h1 style="color:var(--yellow)">UKRP STAFF HANDBOOK</h1>
+  <div class="panel">
+    <p>This handbook applies to <strong>ALL staff</strong>.</p>
+    <p>Ignorance of policy is NOT a defense.</p>
+  </div>
+</div>
+
+<div id="punishments" class="page">
+  <h1 style="color:#ef4444">Punishments</h1>
+  <div class="panel">
+    <ul>
+      <li>Warning — Minor misconduct</li>
+      <li>Strike — Repeated violations</li>
+      <li>Suspension — Abuse of power</li>
+      <li>Demotion — Leadership failure</li>
+      <li>Termination — Severe misconduct</li>
+    </ul>
+  </div>
+</div>
+
+<div id="chain" class="page">
+  <h1 style="color:var(--green)">Chain of Command</h1>
+  <div class="panel">
+    <ol>
+      <li>Owner / Foundership</li>
+      <li>Executive Leadership</li>
+      <li>Management</li>
+      <li>Internal Affairs</li>
+      <li>Administration</li>
+      <li>Moderation</li>
+      <li>Trainees</li>
+    </ol>
+  </div>
+</div>
+
+<div id="expectations" class="page">
+  <h1 style="color:var(--yellow)">Staff Expectations</h1>
+  <div class="panel">
+    <ul>
+      <li>Professional behavior</li>
+      <li>No favoritism</li>
+      <li>No power abuse</li>
+      <li>Respect hierarchy</li>
+      <li>Confidentiality required</li>
+    </ul>
+  </div>
+</div>
+
+<div id="authority" class="page">
+  <h1 style="color:var(--green)">Final Authority</h1>
+  <div class="panel">
+    <p>
+      Ownership retains <strong>absolute authority</strong> over UKRP.
+      All policies may be changed at any time.
+    </p>
+  </div>
+</div>
+
+<footer>
+© UKRP — Official Staff Handbook
+</footer>
+
+</div>
+
+<script>
+function closePopup(){
+  document.getElementById("popup").style.display="none";
+}
+function showPage(id,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.sidebar button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>
 
